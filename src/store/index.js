@@ -1,9 +1,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import actorGroupModule from "./actorGroupModule"
+import actorInstanceModule from "./actorInstanceModule"
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  //helps break up actions to clean up store
+  modules: {
+    actorGroupModule,
+    actorInstanceModule
+  },
   state: {
     // array of projects
     projects: [],
@@ -21,7 +28,5 @@ export default new Vuex.Store({
     }
   },
   actions: {
-  },
-  modules: {
   }
 })
