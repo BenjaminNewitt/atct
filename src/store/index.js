@@ -5,8 +5,20 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    // array of projects
+    projects: [],
+    // activeProject for info
+    activeProject: {},
+    // array to hold each actor instance (column)
+    actorGroups: [],
+    // each actor instance
+    actorInstances: []
   },
   mutations: {
+    //generic setting of a resource by name
+    setResource(state, payload) {
+      state[payload.resource] = payload.data;
+    }
   },
   actions: {
   },
