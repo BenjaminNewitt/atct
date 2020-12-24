@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import actorGroupModule from "./actorGroupModule"
 import actorInstanceModule from "./actorInstanceModule"
+// implement nanoId for object IDs
 
 Vue.use(Vuex)
 
