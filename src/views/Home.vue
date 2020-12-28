@@ -1,15 +1,15 @@
 <template>
-  <div class="home container-fluid">
+  <div class="home container-fluid bg-ice">
     <div class="row">
       <!-- toolbar component -->
       <Toolbar />
     </div>
     <div class="row">
       <!-- give a little space -->
-      <div class="col-11 mx-auto">
+      <div class="col-10 mx-auto">
         <div class="row">
           <!-- array of actorGroups components -->
-          <ActorGroup />
+          <ActorGroup v-for="actorGroup in actorGroups" :key="actorGroup._id" :actorGroupData="actorGroup"></ActorGroup>
         </div>
       </div>
     </div>
@@ -23,5 +23,10 @@ import Toolbar from "@/components/Toolbar";
 export default {
   name: "Home",
   components: { ActorGroup, Toolbar },
+  computed: {
+    actorGroups() {
+      return this.$store.state.actorGroups;
+    }
+  }
 };
 </script>

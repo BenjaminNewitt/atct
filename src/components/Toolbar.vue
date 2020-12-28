@@ -1,5 +1,6 @@
 <template>
-  <div id="Toolbar" class="col-12">
+  <div id="Toolbar" class="col-12 py-3 border-bottom border-4 border-dark">
+    <button class="btn btn-ice fw-bold border border-dark" @click="createNewActorGroup()">New Group</button>
     <!-- will take up top part of window all the way across -->
   </div>
 </template>
@@ -11,8 +12,10 @@ export default {
   methods: {
     createNewActorGroup () {
       let newActorGroup = {};
-      newActorGroup.id = nanoid();
-      newActorGroup.actorInstances = [];
+      newActorGroup._id = nanoid();
+      newActorGroup.title = "";
+      newActorGroup.notes = "";
+      this.$store.dispatch("addActorGroup", newActorGroup)
     }
   }
 }
