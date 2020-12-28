@@ -1,3 +1,9 @@
 export default {
-  actions: {}
+  actions: {
+
+    addActorGroup ({ commit }, actorGroup) {
+      commit('addActorGroup', actorGroup);
+    }
+
+  }
 }

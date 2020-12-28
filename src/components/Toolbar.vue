@@ -5,7 +5,15 @@
 </template>
 
 <script>
+import { nanoid } from 'nanoid'
 export default {
-  name: 'Toolbar'
+  name: 'Toolbar',
+  methods: {
+    createNewActorGroup () {
+      let newActorGroup = {};
+      newActorGroup.id = nanoid();
+      newActorGroup.actorInstances = [];
+    }
+  }
 }
 </script>

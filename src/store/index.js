@@ -25,9 +25,13 @@ export default new Vuex.Store({
     actorInstanceText: []
   },
   mutations: {
-    //generic setting of a resource by name
+    // generic setting of a resource by name
     setResource(state, payload) {
       state[payload.resource] = payload.data;
+    },
+    addActorGroup(state, payload) {
+      // add new "column" to add actors to main window
+      state.actorGroups.push(payload);
     }
   },
   actions: {
