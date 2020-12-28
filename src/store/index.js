@@ -20,7 +20,9 @@ export default new Vuex.Store({
     // array to hold each actor instance (column)
     actorGroups: [],
     // each actor instance
-    actorInstances: []
+    actorInstances: [],
+    // translate the actor's properties for inserting into JSON
+    actorInstanceText: []
   },
   mutations: {
     //generic setting of a resource by name
