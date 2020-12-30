@@ -20,7 +20,7 @@ export default new Vuex.Store({
     // array to hold each actor instance (column)
     actorGroups: [],
     // each actor instance
-    actorInstances: [],
+    actorInstances: {},
     // translate the actor's properties for inserting into JSON
     actorInstanceText: []
   },
@@ -29,13 +29,17 @@ export default new Vuex.Store({
     setResource(state, payload) {
       state[payload.resource] = payload.data;
     },
-    addActorGroup(state, payload) {
+    addActorGroup(state, actorGroup) {
       // add new "column" to add actors to main window
-      state.actorGroups.push(payload);
+      state.actorGroups.push(actorGroup);
     },
-    addActorInstance(state, payload) {
+    addGroupEntrytoActorInstances(state, actorGroupId) {
+      Vue.set(state.actorInstances, actorGroupId, []);
+      // state.actorInstances[actorGroupId] = [];
+    },
+    addActorInstance(state, actorInstance) {
       // add new "column" to add actors to main window
-      state.actorInstances.push(payload);
+      state.actorInstances[actorInstance.groupId].push(actorInstance);
     }
   },
   actions: {

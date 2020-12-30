@@ -1,17 +1,20 @@
 <template>
-  <div id="ActorGroup" class="col-3 border border-dark border-2">
+  <div id="ActorGroup" class="ActorGroup col-3 border border-dark border-2">
     <button class="btn btn-sm btn-ice fw-bold border border-dark" @click="createNewActorInstance()">New Actor</button>
 <!-- need to check overflow -->
-<ActorInstance v-for="actorInstance in actorInstances" :key="actorInstance._id" :actorInstanceData="actorInstance"></ActorInstance>
+<div class="row">
+
+<ActorInstanceComponent v-for="actorInstance in actorInstances" :key="actorInstance._id" :actorInstanceData="actorInstance" class="col-12 mb-2"/>
+</div>
   </div>
 </template>
 
 <script>
-import ActorInstance from "@/components/ActorInstance";
+import ActorInstanceComponent from "@/components/ActorInstance";
 export default {
   name: 'ActorGroup',
   props: ["actorGroupData"],
-  components: { ActorInstance },
+  components: { ActorInstanceComponent },
   data() {
     return {
       newActorInstance: {

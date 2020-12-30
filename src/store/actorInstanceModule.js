@@ -6,6 +6,5 @@ export default {
       actorInstance._id = nanoid();
       commit('addActorInstance', actorInstance);
     }
-
   }
 }
