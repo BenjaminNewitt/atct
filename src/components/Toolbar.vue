@@ -6,16 +6,22 @@
 </template>
 
 <script>
-import { nanoid } from 'nanoid'
 export default {
   name: 'Toolbar',
+  data() {
+    return {
+      newActorGroup: {
+        title: "",
+        notes: ""
+      }
+    }
+  },
   methods: {
     createNewActorGroup () {
-      let newActorGroup = {};
-      newActorGroup._id = nanoid();
-      newActorGroup.title = "";
-      newActorGroup.notes = "";
-      this.$store.dispatch("addActorGroup", newActorGroup)
+      let actorGroup = { ...this.newActorGroup};
+      this.$store.dispatch("addActorGroup",actorGroup);
+     actorGroup.title = "";
+     actorGroup.notes = "";
     }
   }
 }

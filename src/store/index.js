@@ -32,6 +32,10 @@ export default new Vuex.Store({
     addActorGroup(state, payload) {
       // add new "column" to add actors to main window
       state.actorGroups.push(payload);
+    },
+    addActorInstance(state, payload) {
+      // add new "column" to add actors to main window
+      state.actorInstances.push(payload);
     }
   },
   actions: {
