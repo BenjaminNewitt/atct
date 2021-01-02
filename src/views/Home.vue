@@ -7,10 +7,8 @@
     <div class="row">
       <!-- give a little space -->
       <div class="col-10 mx-auto">
-        <div class="row">
           <!-- array of actorGroups components -->
           <ActorGroup v-for="actorGroup in actorGroups" :key="actorGroup._id" :actorGroupData="actorGroup"></ActorGroup>
-        </div>
       </div>
     </div>
   </div>
@@ -30,3 +28,7 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+
+</style>

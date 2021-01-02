@@ -20,6 +20,7 @@ export default {
       newActorInstance: {
           title: "",
           notes: "",
+          color: "",
           groupId: this.actorGroupData._id
       }
     }

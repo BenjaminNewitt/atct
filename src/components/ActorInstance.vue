@@ -1,6 +1,7 @@
 <template>
-  <div id="ActorInstance" class="ActorInstance">
-      <h5 class="text-ice">Testing</h5>
+  <div id="ActorInstance" class="ActorInstance row">
+    <div class="col-12">
+    </div>
   </div>
 </template>
 

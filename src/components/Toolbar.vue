@@ -12,7 +12,8 @@ export default {
     return {
       newActorGroup: {
         title: "",
-        notes: ""
+        notes: "",
+        color: ""
       }
     }
   },
